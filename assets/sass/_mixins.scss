@@ -1,0 +1,47 @@
+/* Images
+----------------------------------------------------------------------------------------------------*/
+@mixin background-gradient($color-top, $color-bottom) {
+    background: $color-top;
+    background: -webkit-linear-gradient($color-top 0%, $color-bottom 100%);
+    background: -o-linear-gradient($color-top 0%, $color-bottom 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, $color-top), color-stop(100%, $color-bottom));
+    background: linear-gradient($color-top 0%, $color-bottom 100%);
+}
+
+@mixin image2x($image, $type, $width, $height) {
+    background: url($image + '@1x.' + $type) 0 0 no-repeat;
+    width: $width;
+    height: $height;
+    @media (-webkit-min-device-pixel-ratio:1.5), (min-resolution:2dppx), (min-width: 1600px) {
+        & {
+            background-image: url($image + '@2x.' + $type);
+            background-size: $width $height;
+        }
+    }
+}
+
+/* Clearfix
+----------------------------------------------------------------------------------------------------*/
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+/* Rem
+----------------------------------------------------------------------------------------------------*/
+@function calculateRem($size) {
+    $remSize: $size / $font-size;
+    @return #{$remSize}rem;
+}
+
+@mixin fontSize($size) {
+    font-size: $size; //Fallback in px
+    font-size: calculateRem($size);
+}
+
+@mixin lineHeight($size) {
+    line-height: $size / $font-size;
+}

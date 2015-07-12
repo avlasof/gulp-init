@@ -1,0 +1,10 @@
+{
+  "name": "gulp-init",
+  "version": "0.0.0",
+  "authors": [
+    "Alexander Sofin <avlasof@mail.ru>"
+  ],
+  "license": "MIT",
+  "dependencies": {
+  }
+}

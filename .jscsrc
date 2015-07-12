@@ -1,0 +1,7 @@
+{
+    "preset": "google",
+    "maximumLineLength": 120,
+    "validateIndentation": 4,
+    "disallowMultipleVarDecl": null,
+    "requireMultipleVarDecl": "onevar"
+}

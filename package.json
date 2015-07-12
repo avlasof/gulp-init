@@ -1,0 +1,28 @@
+{
+  "author": "Alexander Sofin <avlasof@mail.ru>",
+  "license": "MIT",
+  "devDependencies": {
+    "browser-sync": "^2.7.13",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^2.3.1",
+    "gulp-changed": "^1.2.1",
+    "gulp-csscomb": "^3.0.6",
+    "gulp-csso": "^1.0.0",
+    "gulp-file-include": "^0.13.2",
+    "gulp-filesize": "0.0.6",
+    "gulp-git": "^1.2.4",
+    "gulp-header": "^1.2.2",
+    "gulp-htmlhint": "^0.2.0",
+    "gulp-imagemin": "^2.3.0",
+    "gulp-jscs": "^1.6.0",
+    "gulp-modernizr": "^1.0.0-alpha",
+    "gulp-sass": "^2.0.3",
+    "gulp-sourcemaps": "^1.5.2",
+    "gulp-uglify": "^1.2.0",
+    "gulp-webp": "^2.3.0",
+    "gulp-webpcss": "^1.0.6",
+    "imagemin-pngquant": "^4.1.0",
+    "require-dir": "^0.3.0",
+    "wiredep": "^3.0.0-beta"
+  }
+}
