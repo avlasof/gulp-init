@@ -4,7 +4,6 @@ var browserSync = require('browser-sync').create(),
     header = require('gulp-header'),
     jscs = require('gulp-jscs'),
     modernizr = require('gulp-modernizr'),
-    size = require('gulp-filesize'),
     uglify = require('gulp-uglify');
 
 gulp.task('jscs', function() {
@@ -29,7 +28,6 @@ gulp.task('uglifyJs', function() {
         .pipe(uglify())
         .pipe(header(configApp.banner))
         .pipe(gulp.dest(configApp.dist + '/scripts'))
-        .pipe(size())
         .pipe(browserSync.stream());
 });
 
