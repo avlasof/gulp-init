@@ -3,7 +3,7 @@ var browserSync = require('browser-sync').create(),
     git = require('gulp-git'),
     gulp = require('gulp');
 
-gulp.task('serve', ['sass'], function() {
+gulp.task('serve', ['build'], function() {
     browserSync.init({
         server: configApp.dist
     });
