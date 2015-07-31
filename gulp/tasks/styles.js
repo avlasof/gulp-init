@@ -1,5 +1,5 @@
 var autoprefixer = require('gulp-autoprefixer'),
-    browserSync = require('browser-sync').create(),
+    browserSync = require('browser-sync'),
     configApp = require('../config'),
     csscomb = require('gulp-csscomb'),
     csso = require('gulp-csso'),
@@ -13,9 +13,13 @@ gulp.task('sass', ['comb'], function() {
     return gulp.src(configApp.app + '/sass/**/main.scss')
         .pipe(sourcemaps.init())
         .pipe(sass().on('error', sass.logError))
+        .pipe(autoprefixer('last 2 version', 'safari 6', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
+        .pipe(webpcss({}))
+        .pipe(csso())
+        .pipe(header(configApp.banner))
         .pipe(sourcemaps.write('.'))
-        .pipe(gulp.dest(configApp.app + '/styles/'))
-        .pipe(browserSync.stream());
+        .pipe(gulp.dest(configApp.dist + '/styles'))
+        .pipe(browserSync.stream({match: '**/*.css'}));
 });
 
 gulp.task('comb', function() {
@@ -24,15 +28,4 @@ gulp.task('comb', function() {
         .pipe(gulp.dest(configApp.app + '/sass'))
 });
 
-gulp.task('css', function() {
-    return gulp.src(configApp.app + '/styles/**/*.css')
-        .pipe(sourcemaps.init())
-        .pipe(autoprefixer('last 2 version', 'safari 6', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
-        .pipe(webpcss({}))
-        .pipe(csso())
-        .pipe(header(configApp.banner))
-        .pipe(sourcemaps.write('.'))
-        .pipe(gulp.dest(configApp.dist + '/styles'));
-});
-
-gulp.task('styles', ['sass', 'css']);
+gulp.task('styles', ['sass']);

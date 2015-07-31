@@ -1,4 +1,4 @@
-var browserSync = require('browser-sync').create(),
+var browserSync = require('browser-sync'),
     configApp = require('../config'),
     git = require('gulp-git'),
     gulp = require('gulp');

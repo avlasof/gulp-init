@@ -1,5 +1,5 @@
 var babel = require('gulp-babel'),
-    browserSync = require('browser-sync').create(),
+    browserSync = require('browser-sync'),
     concat = require('gulp-concat'),
     configApp = require('../config'),
     gulp = require('gulp'),
