@@ -13,7 +13,10 @@ gulp.task('htmlBuild', function() {
         wiredepOptions = {
             bowerJson: require('../../bower.json'),
             ignorePath: new RegExp('^(\.\.\/)+' + configApp.dist),
-            exclude: ['bower_components/jquery/'],
+            exclude: [
+                'bower_components/jquery/',
+                'bower_components/bootstrap/'
+            ]
         };
 
     return gulp.src(configApp.app + '/templates/*.html')

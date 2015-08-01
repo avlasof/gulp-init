@@ -10,6 +10,7 @@ gulp.task('serve', ['build'], function() {
 
     gulp.watch(configApp.app + '/sass/**/*.scss', ['styles']);
     gulp.watch(configApp.app + '/scripts/**/*.js', ['scripts']);
+    gulp.watch(configApp.app + '/images/**/*.{png,jpg,gif,svg}', ['images']);
     gulp.watch(configApp.app + '/templates/**/*.html', ['htmlBuild']);
     gulp.watch(configApp.dist + '/*.html').on('change', browserSync.reload);
 });

@@ -23,7 +23,7 @@ gulp.task('modernizr', function() {
     return gulp.src(configApp.app + '/scripts/**/*.js')
         .pipe(modernizr(modernizrOptions))
         .pipe(uglify())
-        .pipe(gulp.dest(configApp.dist + '/scripts'))
+        .pipe(gulp.dest(configApp.dist + '/scripts'));
 });
 
 gulp.task('postJS', function() {
